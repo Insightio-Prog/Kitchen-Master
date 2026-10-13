@@ -6836,5 +6836,1156 @@
     "servingSuggestions": "Serve in a soup cup or bowl.",
     "updatedAt": "2026-10-13T16:21:00.362Z",
     "id": "winter-veg-soup"
+  },
+  {
+    "name": "Spiced Carrot & Lentil Soup (Vegan)",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegan",
+    "portionWeight": 300,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 1.5,
+        "unit": "kg",
+        "name": "Carrots",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "10415"
+      },
+      {
+        "qty": 400,
+        "unit": "g",
+        "name": "Lentils Red Split 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900254"
+      },
+      {
+        "qty": 250,
+        "unit": "g",
+        "name": "Onion Cooking Premium 2.5KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "10469"
+      },
+      {
+        "qty": 15,
+        "unit": "g",
+        "name": "Garlic Puree 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900231"
+      },
+      {
+        "qty": 20,
+        "unit": "g",
+        "name": "Ginger Puree 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900251"
+      },
+      {
+        "qty": 8,
+        "unit": "g",
+        "name": "Cumin Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900179"
+      },
+      {
+        "qty": 8,
+        "unit": "g",
+        "name": "Coriander Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900249"
+      },
+      {
+        "qty": 4,
+        "unit": "g",
+        "name": "Turmeric Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900250"
+      },
+      {
+        "qty": 40,
+        "unit": "g",
+        "name": "Stock Vegetable Bouillon Vegan 1.2KG",
+        "supplier": "Brakes Ambient",
+        "code": "900106"
+      },
+      {
+        "qty": 40,
+        "unit": "ml",
+        "name": "Oil Rapeseed Extended Life B/B 20L",
+        "supplier": "Brakes Ambient",
+        "code": "21557"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      }
+    ],
+    "method": [
+      "Dice the onion and carrots. Rinse the lentils.",
+      "Sweat the onion, garlic and ginger in the oil for 5 minutes. Add the spices and cook for 1 minute.",
+      "Add the carrots, lentils and the bouillon dissolved in 2.5 litres hot water. Simmer 25-30 minutes until soft.",
+      "Blitz until smooth, thin with water if needed and season with pepper.",
+      "Check core temperature has reached 75°C (Eng) / 82°C (Scot) and hold hot above 63°C for service."
+    ],
+    "comments": "Assumed vegan like the other soups. Check the bouillon label before confirming allergens. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve in a soup cup or bowl.",
+    "additional": {
+      "complexity": 1,
+      "dayParts": "Lunch",
+      "lifestyle": "Vegan",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "may",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "spiced-carrot-lentil-soup"
+  },
+  {
+    "name": "Greek Style Chicken Wrap",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Chicken",
+    "portionWeight": 250,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 1.5,
+        "unit": "kg",
+        "name": "Chicken Breast Fillet Skinless 2.5KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900191"
+      },
+      {
+        "qty": 400,
+        "unit": "g",
+        "name": "Yogurt Greek Style 2KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900225"
+      },
+      {
+        "qty": 3,
+        "unit": "each",
+        "name": "Lemons Fresh",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900134"
+      },
+      {
+        "qty": 20,
+        "unit": "g",
+        "name": "Garlic Puree 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900231"
+      },
+      {
+        "qty": 8,
+        "unit": "g",
+        "name": "Oregano Dried 100g",
+        "supplier": "Brakes Ambient",
+        "code": "900260"
+      },
+      {
+        "qty": 40,
+        "unit": "ml",
+        "name": "Oil Rapeseed Extended Life B/B 20L",
+        "supplier": "Brakes Ambient",
+        "code": "21557"
+      },
+      {
+        "qty": 10,
+        "unit": "each",
+        "name": "Tortilla Wraps 10in 18x",
+        "supplier": "Brakes Ambient",
+        "code": "900258"
+      },
+      {
+        "qty": 300,
+        "unit": "g",
+        "name": "Salad Leaf Mixed 500g",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900144"
+      },
+      {
+        "qty": 300,
+        "unit": "g",
+        "name": "Cucumber",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900145"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "Onion Red",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900152"
+      },
+      {
+        "qty": 200,
+        "unit": "g",
+        "name": "Feta Cheese 1KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900259"
+      },
+      {
+        "qty": 10,
+        "unit": "g",
+        "name": "Mint Fresh 100g",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900111"
+      },
+      {
+        "qty": 3,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      }
+    ],
+    "method": [
+      "Slice the chicken. Marinate in half the yogurt, the lemon juice and zest, garlic, oregano and oil for at least 2 hours.",
+      "Grill or pan-fry the chicken until cooked through. Core temperature 75°C minimum.",
+      "Dice the cucumber and mix with the remaining yogurt, chopped mint and seasoning for the sauce.",
+      "Slice the red onion. Warm the wraps.",
+      "Fill each wrap with salad leaf, chicken, red onion, crumbled feta and sauce, then fold and cut in half."
+    ],
+    "comments": "Contains gluten and milk. Check the wrap label for soya and sesame. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with skinny fries.",
+    "additional": {
+      "complexity": 2,
+      "dayParts": "Lunch",
+      "lifestyle": "None Listed",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "contains",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "contains",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "may",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "greek-style-chicken-wrap"
+  },
+  {
+    "name": "Skinny Fries",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegan",
+    "portionWeight": 150,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 2.5,
+        "unit": "kg",
+        "name": "Fries Skinny Frozen 4x2.5KG",
+        "supplier": "Brakes Frozen Foodservice Ltd",
+        "code": "900255"
+      },
+      {
+        "qty": 100,
+        "unit": "ml",
+        "name": "Oil Frying 20L",
+        "supplier": "Brakes Ambient",
+        "code": "900132"
+      },
+      {
+        "qty": 10,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      }
+    ],
+    "method": [
+      "Cook from frozen in the fryer at 175°C for 3-4 minutes until golden, or on a tray in the oven at 220°C for 15-18 minutes.",
+      "Drain, season with salt and serve straight away."
+    ],
+    "comments": "Bought-in frozen. Fried in dedicated oil, so check the oil and the pack label before confirming allergens. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve hot.",
+    "additional": {
+      "complexity": 1,
+      "dayParts": "Lunch",
+      "lifestyle": "Vegan",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "none"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "skinny-fries"
+  },
+  {
+    "name": "Mushroom, Cauliflower & Fennel Ragout (Vegan)",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegan",
+    "portionWeight": 350,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 1.2,
+        "unit": "kg",
+        "name": "Mushrooms Closed Cup Whole 2KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900234"
+      },
+      {
+        "qty": 800,
+        "unit": "g",
+        "name": "Cauliflower Florets 1KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900256"
+      },
+      {
+        "qty": 400,
+        "unit": "g",
+        "name": "Fennel Fresh",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900199"
+      },
+      {
+        "qty": 300,
+        "unit": "g",
+        "name": "Onion Cooking Premium 2.5KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "10469"
+      },
+      {
+        "qty": 20,
+        "unit": "g",
+        "name": "Garlic Puree 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900231"
+      },
+      {
+        "qty": 4,
+        "unit": "g",
+        "name": "Fennel Seed 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900200"
+      },
+      {
+        "qty": 4,
+        "unit": "g",
+        "name": "Thyme Dried 100g",
+        "supplier": "Brakes Ambient",
+        "code": "900107"
+      },
+      {
+        "qty": 1.5,
+        "unit": "kg",
+        "name": "Tomatoes Chopped Tinned 6x2.5KG",
+        "supplier": "Brakes Ambient",
+        "code": "900229"
+      },
+      {
+        "qty": 60,
+        "unit": "g",
+        "name": "Tomato Puree 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900230"
+      },
+      {
+        "qty": 40,
+        "unit": "g",
+        "name": "Stock Vegetable Bouillon Vegan 1.2KG",
+        "supplier": "Brakes Ambient",
+        "code": "900106"
+      },
+      {
+        "qty": 50,
+        "unit": "ml",
+        "name": "Oil Rapeseed Extended Life B/B 20L",
+        "supplier": "Brakes Ambient",
+        "code": "21557"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      }
+    ],
+    "method": [
+      "Halve the mushrooms, cut the cauliflower into florets and slice the fennel and onion.",
+      "Fry the mushrooms in batches in hot oil until golden. Set aside.",
+      "Sweat the onion, fennel, garlic and fennel seed for 8 minutes. Stir in the tomato puree and thyme.",
+      "Add the chopped tomatoes and the bouillon dissolved in 500ml hot water. Add the cauliflower and simmer 20 minutes.",
+      "Return the mushrooms, cook 10 more minutes and season with pepper.",
+      "Check core temperature has reached 75°C (Eng) / 82°C (Scot) and hold hot above 63°C for service."
+    ],
+    "comments": "The sheet marks this (V). Made here without dairy so it is vegan. Check the bouillon label before confirming allergens. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve over boiled rice.",
+    "additional": {
+      "complexity": 2,
+      "dayParts": "Lunch",
+      "lifestyle": "Vegan",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "may",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "mushroom-cauliflower-fennel-ragout"
+  },
+  {
+    "name": "Boiled Rice",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegan",
+    "portionWeight": 180,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 800,
+        "unit": "g",
+        "name": "Rice Long Grain White 5KG",
+        "supplier": "Brakes Ambient",
+        "code": "900147"
+      },
+      {
+        "qty": 10,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      }
+    ],
+    "method": [
+      "Rinse the rice. Cook in plenty of boiling salted water for 10-12 minutes until tender.",
+      "Drain, steam off and hold hot above 63°C. Never leave rice at room temperature."
+    ],
+    "comments": "Cook fresh and keep hot. Cool and chill within 1 hour if not used. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with the ragout.",
+    "additional": {
+      "complexity": 1,
+      "dayParts": "Lunch",
+      "lifestyle": "Vegan",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "none"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "boiled-rice"
+  },
+  {
+    "name": "Tandoori Spiced Fish",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Fish",
+    "portionWeight": 150,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 10,
+        "unit": "each",
+        "name": "Pollock Fillet Skinless 150g",
+        "supplier": "Brakes Frozen Foodservice Ltd",
+        "code": "900203"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "Tandoori Paste 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900257"
+      },
+      {
+        "qty": 250,
+        "unit": "g",
+        "name": "Yogurt Greek Style 2KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900225"
+      },
+      {
+        "qty": 2,
+        "unit": "each",
+        "name": "Lemons Fresh",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900134"
+      },
+      {
+        "qty": 30,
+        "unit": "ml",
+        "name": "Oil Rapeseed Extended Life B/B 20L",
+        "supplier": "Brakes Ambient",
+        "code": "21557"
+      },
+      {
+        "qty": 15,
+        "unit": "g",
+        "name": "Coriander Fresh 100g",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900252"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      }
+    ],
+    "method": [
+      "Mix the tandoori paste, yogurt, lemon juice and oil. Coat the fish and marinate for at least 1 hour.",
+      "Bake on a lined tray at 200°C for 12-15 minutes until cooked through. Core temperature 75°C minimum.",
+      "Sprinkle with chopped fresh coriander and serve with a lemon wedge."
+    ],
+    "comments": "Contains fish and milk. Check the tandoori paste label for mustard and sulphites. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with jewelled rice.",
+    "additional": {
+      "complexity": 2,
+      "dayParts": "Dinner",
+      "lifestyle": "None Listed",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "contains",
+      "lupin": "none",
+      "milk": "contains",
+      "molluscs": "none",
+      "mustard": "may",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "tandoori-spiced-fish"
+  },
+  {
+    "name": "Jewelled Rice",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegan",
+    "portionWeight": 200,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 700,
+        "unit": "g",
+        "name": "Rice Long Grain White 5KG",
+        "supplier": "Brakes Ambient",
+        "code": "900147"
+      },
+      {
+        "qty": 150,
+        "unit": "g",
+        "name": "Apricots Dried 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900169"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "Sultanas 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900261"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "Almonds Flaked 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900262"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "Pomegranate Seeds 500g",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900263"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "Spring Onions Trimmed",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900237"
+      },
+      {
+        "qty": 5,
+        "unit": "g",
+        "name": "Turmeric Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900250"
+      },
+      {
+        "qty": 20,
+        "unit": "g",
+        "name": "Parsley Fresh Flat 100g",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900135"
+      },
+      {
+        "qty": 30,
+        "unit": "ml",
+        "name": "Oil Rapeseed Extended Life B/B 20L",
+        "supplier": "Brakes Ambient",
+        "code": "21557"
+      },
+      {
+        "qty": 6,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      }
+    ],
+    "method": [
+      "Cook the rice in boiling salted water with the turmeric until tender. Drain and steam off.",
+      "Lightly toast the flaked almonds in a dry pan. Dice the apricots and slice the spring onions.",
+      "Fold the apricots, sultanas, almonds, spring onion, chopped parsley and oil through the hot rice.",
+      "Scatter the pomegranate seeds over the top. Hold hot above 63°C."
+    ],
+    "comments": "Contains tree nuts (almonds). Dried fruit may carry sulphites, so check the labels. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with tandoori fish.",
+    "additional": {
+      "complexity": 2,
+      "dayParts": "Dinner",
+      "lifestyle": "Vegan",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "contains",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "jewelled-rice"
+  },
+  {
+    "name": "Honey Roast Gammon",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Pork",
+    "portionWeight": 150,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 2.5,
+        "unit": "kg",
+        "name": "Gammon Joint Boneless 2.5KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900129"
+      },
+      {
+        "qty": 80,
+        "unit": "ml",
+        "name": "Honey Squeezy 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900243"
+      },
+      {
+        "qty": 60,
+        "unit": "g",
+        "name": "Mustard Wholegrain 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900264"
+      },
+      {
+        "qty": 200,
+        "unit": "ml",
+        "name": "Orange Juice 1L",
+        "supplier": "Brakes Ambient",
+        "code": "900113"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      }
+    ],
+    "method": [
+      "Soak the gammon overnight in cold water if salty. Simmer in fresh water for 40 minutes per kg, then drain.",
+      "Score the fat. Mix the honey, wholegrain mustard and orange juice into a glaze.",
+      "Roast at 180°C, brushing with glaze every 10 minutes, for 30-40 minutes until sticky. Core temperature 75°C minimum.",
+      "Rest 15 minutes, slice and serve with spoonfuls of the pan glaze."
+    ],
+    "comments": "Contains mustard. Honey means it is not vegan. Check the gammon label for sulphites. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with wholegrain mustard mash, parsley sauce and garden peas and carrots.",
+    "additional": {
+      "complexity": 2,
+      "dayParts": "Dinner",
+      "lifestyle": "None Listed",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "contains",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "honey-roast-gammon"
+  },
+  {
+    "name": "Wholegrain Mustard Mash",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegetarian",
+    "portionWeight": 200,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 2.5,
+        "unit": "kg",
+        "name": "Mash Potato Frozen 4x2.5KG",
+        "supplier": "Brakes Frozen Foodservice Ltd",
+        "code": "900153"
+      },
+      {
+        "qty": 100,
+        "unit": "g",
+        "name": "Butter Unsalted",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900125"
+      },
+      {
+        "qty": 60,
+        "unit": "g",
+        "name": "Mustard Wholegrain 1KG",
+        "supplier": "Brakes Ambient",
+        "code": "900264"
+      },
+      {
+        "qty": 200,
+        "unit": "ml",
+        "name": "Milk Whole 2.27L",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900126"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      }
+    ],
+    "method": [
+      "Prepare the frozen mash to pack instructions.",
+      "Beat in the butter, warm milk and wholegrain mustard. Season with pepper.",
+      "Hold hot above 63°C."
+    ],
+    "comments": "Contains milk and mustard. Check the frozen mash label. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with honey roast gammon.",
+    "additional": {
+      "complexity": 1,
+      "dayParts": "Dinner",
+      "lifestyle": "Vegetarian",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "contains",
+      "molluscs": "none",
+      "mustard": "contains",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "may"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "wholegrain-mustard-mash"
+  },
+  {
+    "name": "Parsley Sauce",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegetarian",
+    "portionWeight": 60,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 1.2,
+        "unit": "l",
+        "name": "Milk Whole 2.27L",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900126"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "Butter Unsalted",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900125"
+      },
+      {
+        "qty": 80,
+        "unit": "g",
+        "name": "Flour Plain 16KG",
+        "supplier": "Brakes Ambient",
+        "code": "900176"
+      },
+      {
+        "qty": 40,
+        "unit": "g",
+        "name": "Parsley Fresh Flat 100g",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900135"
+      },
+      {
+        "qty": 1,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      },
+      {
+        "qty": 2,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      }
+    ],
+    "method": [
+      "Melt the butter, stir in the flour and cook for 2 minutes without colour.",
+      "Add the warm milk gradually, whisking, then simmer for 10 minutes until smooth.",
+      "Stir in the chopped parsley and season.",
+      "Hold hot above 63°C."
+    ],
+    "comments": "Contains milk and gluten. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve with honey roast gammon.",
+    "additional": {
+      "complexity": 1,
+      "dayParts": "Dinner",
+      "lifestyle": "Vegetarian",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "contains",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "contains",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "none",
+      "sulphites": "none"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "parsley-sauce"
+  },
+  {
+    "name": "Garden Peas & Carrots",
+    "planDate": "",
+    "plu": "",
+    "priceBand": "N/A",
+    "portions": 10,
+    "proteinType": "Vegan",
+    "portionWeight": 100,
+    "nutrition": {
+      "kj": null,
+      "kcal": null,
+      "fat": null,
+      "sat": null,
+      "sugars": null,
+      "kj100": null,
+      "kcal100": null
+    },
+    "ingredients": [
+      {
+        "qty": 1,
+        "unit": "kg",
+        "name": "Peas Frozen 2.5KG",
+        "supplier": "Brakes Frozen Foodservice Ltd",
+        "code": "900110"
+      },
+      {
+        "qty": 600,
+        "unit": "g",
+        "name": "Carrots",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "10415"
+      },
+      {
+        "qty": 40,
+        "unit": "g",
+        "name": "Baking Block Vegan 1KG",
+        "supplier": "Brakes Chilled Ltd",
+        "code": "900154"
+      },
+      {
+        "qty": 3,
+        "unit": "g",
+        "name": "Salt Fine 3KG",
+        "supplier": "Brakes Ambient",
+        "code": "900124"
+      },
+      {
+        "qty": 1,
+        "unit": "g",
+        "name": "Pepper Black Ground 500g",
+        "supplier": "Brakes Ambient",
+        "code": "900123"
+      }
+    ],
+    "method": [
+      "Peel and dice the carrots. Boil for 8 minutes until just tender.",
+      "Add the frozen peas for the last 3 minutes. Drain.",
+      "Toss with the vegan baking block, season and hold hot above 63°C."
+    ],
+    "comments": "Vegan, made with the vegan baking block. Check the block label for milk. Codes starting with 9 are placeholders until checked against the Brakes portal.",
+    "servingSuggestions": "Serve as a side vegetable.",
+    "additional": {
+      "complexity": 1,
+      "dayParts": "Dinner",
+      "lifestyle": "Vegan",
+      "season": "All Year",
+      "segment": "None Listed"
+    },
+    "allergens": {
+      "celery": "none",
+      "gluten": "none",
+      "crustaceans": "none",
+      "eggs": "none",
+      "fish": "none",
+      "lupin": "none",
+      "milk": "none",
+      "molluscs": "none",
+      "mustard": "none",
+      "nuts": "none",
+      "peanuts": "none",
+      "sesame": "none",
+      "soya": "may",
+      "sulphites": "none"
+    },
+    "allergensChecked": false,
+    "updatedAt": "2026-10-13T20:00:00.000Z",
+    "id": "garden-peas-carrots"
   }
 ]
