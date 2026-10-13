@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitchen Master</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="shell app" id="app" data-view="list">
+  <header class="top">
+    <div class="brand"><b>Kitchen Master</b><span>Run the kitchen from one place</span></div>
+    <span class="pill" id="store">Loading</span>
+  </header>
+  <nav class="nav" role="tablist" aria-label="Kitchen Master modules" id="nav">
+    <button class="tab" role="tab" type="button" data-mod="source" aria-selected="true">The Source</button>
+    <button class="tab" role="tab" type="button" data-mod="planner" aria-selected="false">Menu Planner <span class="soon">soon</span></button>
+    <button class="tab" role="tab" type="button" data-mod="allergens" aria-selected="false">Allergen Check <span class="soon">soon</span></button>
+    <button class="tab" role="tab" type="button" data-mod="stock" aria-selected="false">Stock Take <span class="soon">soon</span></button>
+    <button class="tab" role="tab" type="button" data-mod="waste" aria-selected="false">Waste &amp; Produced <span class="soon">soon</span></button>
+    <button class="tab" role="tab" type="button" data-mod="order" aria-selected="false">Brakes Order <span class="soon">soon</span></button>
+  </nav>
+
+  <section id="mod-planner" class="mod" hidden aria-label="Menu Planner"><div class="soonbox"><h2>Menu Planner</h2>
+    <p>Build the week’s set menu from The Source and set the guest numbers for each day.</p>
+    <ul><li>Drag recipes into lunch and dinner for each day</li><li>Enter guest numbers and which dietary groups are staying</li><li>See portions needed per dish</li></ul>
+    <div class="feeds">Reads: The Source. Feeds: Allergen Check, Brakes Order.</div></div></section>
+  <section id="mod-allergens" class="mod" hidden aria-label="Allergen Check"><div class="soonbox"><h2>Allergen Check</h2>
+    <p>Enter each group’s allergy information and Kitchen Master checks it against the week’s menu.</p>
+    <ul><li>Flags every dish that contains or may contain a group’s allergens</li><li>Warns about recipes whose allergens are still unconfirmed</li><li>Suggests the safe alternative for each meal</li></ul>
+    <div class="feeds">Reads: The Source, Menu Planner.</div></div></section>
+  <section id="mod-stock" class="mod" hidden aria-label="Stock Take"><div class="soonbox"><h2>Stock Take</h2>
+    <p>Count what is on the shelves and compare it against what Kitchen Master expects you to have.</p>
+    <ul><li>Manual count entry that works on a tablet</li><li>Expected amount from deliveries, usage, waste and production</li><li>Highlights differences so you can spot losses</li></ul>
+    <div class="feeds">Reads: Brakes Order, Waste &amp; Produced, The Source.</div></div></section>
+  <section id="mod-waste" class="mod" hidden aria-label="Waste and Produced"><div class="soonbox"><h2>Waste &amp; Produced</h2>
+    <p>Log what was thrown away and what was made, so stock stays accurate.</p>
+    <ul><li>Quick waste entry by ingredient or dish</li><li>Record batches produced and their portions</li><li>Adjusts the expected stock automatically</li></ul>
+    <div class="feeds">Feeds: Stock Take.</div></div></section>
+  <section id="mod-order" class="mod" hidden aria-label="Brakes Order"><div class="soonbox"><h2>Brakes Order</h2>
+    <p>Turns the week’s menu and guest numbers into a food order, minus what you already have in stock.</p>
+    <ul><li>Totals every ingredient by Brakes product code</li><li>Checks it against expected stock</li><li>Approve the order, then copy the codes into the Brakes portal</li></ul>
+    <div class="feeds">Reads: The Source, Menu Planner, Stock Take.</div></div></section>
+
+  <section id="mod-source" class="mod" aria-label="The Source">
+  <div class="modhead"><h2>The Source</h2><span>Recipe book</span></div>
+  <div class="cols">
+    <aside class="side" aria-label="Recipes">
+      <div class="shelf-head">
+        <button class="btn primary" type="button" data-act="new">+ New recipe</button>
+        <label class="fld"><span>Search recipes or ingredients</span><input id="q" type="search" placeholder="Chilli, onion, 10469"></label>
+      </div>
+      <ul class="list" id="list"></ul>
+    </aside>
+    <main class="main" id="main"></main>
+  </div>
+  </section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/data/recipes.seed.js"></script>
+<script src="js/modules/source.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
