@@ -9,7 +9,7 @@ Built for a real hotel and conference-centre kitchen that runs set menus, to rep
 | Module | Status | What it does |
 | --- | --- | --- |
 | **The Source** | Live | Recipe book laid out like the printed work sheet. Scales to any number of portions, lists Brakes codes, tracks 14 allergens |
-| Menu Planner | Planned | Build the week's menu and set guest numbers and dietary groups |
+| **Menu Planner** | Live | Pick each day's lunch and dinner from The Source, set guest numbers and how many of each dish to cook, with allergen tags on every dish |
 | Allergen Check | Planned | Cross-reference each group's allergies against the menu and flag concerns |
 | Stock Take | Planned | Manual counts against expected amounts |
 | Waste & Produced | Planned | Log waste and production so stock stays accurate |
@@ -28,9 +28,13 @@ index.html              page shell and module tabs
 css/styles.css          all styling, light and dark
 js/nav.js               module tab switching
 js/modules/source.js    The Source (recipe book)
+js/modules/planner.js   Menu Planner
+js/data/menu.seed.js    sample week for the planner
 js/data/recipes.seed.js starter recipes, generated
 data/recipes.json       starter recipes (edit this one)
 tools/build-seed.js     rebuilds the seed file from the JSON
+tools/build-single.js   builds dist/kitchen-master.html, one self-contained file
+dist/kitchen-master.html  single-file copy you can email or put on a tablet
 ```
 
 After editing `data/recipes.json`, run `node tools/build-seed.js`. Clear the site's data in the browser to reload the starter recipes.

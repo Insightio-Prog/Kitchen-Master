@@ -48,6 +48,18 @@
   };
 
   var S = { recipes: [], loaded: false, store: 'loading', selId: null, mode: 'view', target: null, q: '', draft: null, confirmDelete: false };
+  /* Share recipes with other modules (Menu Planner and later modules) */
+  window.KM = window.KM || {};
+  (function (KM) {
+    var subs = [], sig = '';
+    KM.recipes = [];
+    KM.onRecipes = function (f) { subs.push(f); f(KM.recipes); };
+    KM.setRecipes = function (list) {
+      var s = list.map(function (r) { return r.id + '|' + (r.updatedAt || '') + '|' + (r.allergensChecked ? 1 : 0); }).join(',');
+      if (s === sig) return; sig = s; KM.recipes = list; subs.forEach(function (f) { f(list); });
+    };
+  })(window.KM);
+
   var recipesRef = null;
   var app = document.getElementById('app');
 
@@ -159,6 +171,7 @@
     el.textContent = S.store === 'db' ? 'Synced across your devices' : S.store === 'local' ? 'Saved on this device only' : 'Loading';
   }
   function renderList() {
+    if (S.loaded) window.KM.setRecipes(S.recipes);
     var el = $('#list');
     if (!S.loaded) { el.innerHTML = '<li class="noresult">Loading recipes</li>'; return; }
     var q = S.q.trim().toLowerCase();
