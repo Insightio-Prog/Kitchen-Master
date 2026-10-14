@@ -243,14 +243,13 @@ fieldset.alr legend { float: left; padding: 0; font-weight: 500; line-height: 44
 .meal-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-bottom: 3px solid var(--ink); padding-bottom: 10px; }
 .meal-head h3 { font: 700 1.6rem/1 var(--font-display); letter-spacing: .06em; text-transform: uppercase; }
 .guests { display: flex; align-items: center; gap: 10px; }
-.gin, .cin { text-align: center; font: 600 1.3rem/1 var(--font-display); }
+.gin { text-align: center; font: 600 1.3rem/1 var(--font-display); }
 .gin { width: 92px; }
-.cin { width: 72px; }
 .psec { display: grid; gap: 8px; }
 .psec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
 .psec-head h4 { margin: 0; font: 600 1.05rem/1 var(--font-display); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
 .pitems { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-.pi { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 10px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); background: var(--surface2); border-radius: 4px; }
+.pi { display: grid; gap: 8px; padding: 10px 12px; border: 1px solid var(--line); background: var(--surface2); border-radius: 4px; }
 .pi-main { display: grid; gap: 6px; min-width: 0; }
 .pi-name { font: 600 1.2rem/1.15 var(--font-display); }
 .pi-tags { display: flex; gap: 4px; flex-wrap: wrap; }
@@ -259,9 +258,13 @@ fieldset.alr legend { float: left; padding: 0; font-weight: 500; line-height: 44
 .ch.may { border-style: dashed; color: var(--warn); border-color: var(--warn); }
 .ch.warn { background: var(--warn-soft); color: var(--warn); border-color: var(--warn); }
 .ch.ok { color: var(--ok); border-color: var(--ok); }
-.cook { display: grid; gap: 4px; justify-items: end; }
-.cook .stepper { display: flex; gap: 6px; }
-.pct { font: 500 .72rem/1 var(--font-mono); color: var(--muted); min-height: 1em; }
+.pi-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+.sides { display: grid; gap: 6px; margin-left: 14px; padding-left: 12px; border-left: 3px solid var(--line); }
+.sides .lbl { margin-bottom: 0; }
+.side { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 6px 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.side .pi-name { font-size: 1.02rem; }
+.sides-none { margin: 0; font-size: .85rem; }
+.btn.sm { padding: 6px 10px; min-height: 36px; font-size: .9rem; }
 .rmi { width: 44px; }
 .none { margin: 0; font-size: .9rem; }
 .add { justify-self: start; }
@@ -278,13 +281,10 @@ fieldset.alr legend { float: left; padding: 0; font-weight: 500; line-height: 44
 @media (max-width: 640px) {
   .daytabs { grid-template-columns: repeat(7, minmax(54px, 1fr)); overflow-x: auto; }
   .dtab .dc { display: none; }
-  .pi { grid-template-columns: minmax(0, 1fr) auto; }
-  .pi .cook { grid-column: 1 / 2; justify-items: start; }
-  .pi .rmi { grid-column: 2; grid-row: 1; }
 }
 @media print {
   header.top, .nav, .modhead, .weeknav, .daytabs, .btn, .icon-btn, .banner, .picker { display: none !important; }
   body { background: #fff; }
   .meals { grid-template-columns: 1fr 1fr; }
-  .cin, .gin { border: 0; }
+  .gin { border: 0; }
 }

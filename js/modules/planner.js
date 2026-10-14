@@ -1,4 +1,4 @@
-/* Menu Planner: pick each day's lunch and dinner from The Source, set guest numbers and how many of each dish to cook.
+/* Menu Planner: pick each day's lunch and dinner from The Source and set the total guests. Each main and vegetarian dish has its own sides.
    Data: one document per week (id = the Monday's date, e.g. 2026-10-12). Saved to the shared database when it exists,
    otherwise to this browser. Reads recipes from window.KM (published by js/modules/source.js). */
 (function () {
@@ -8,7 +8,8 @@
 
   var DAYS = [['Mon', 'Monday'], ['Tue', 'Tuesday'], ['Wed', 'Wednesday'], ['Thu', 'Thursday'], ['Fri', 'Friday'], ['Sat', 'Saturday'], ['Sun', 'Sunday']];
   var MEALS = [['lunch', 'Lunch'], ['dinner', 'Dinner']];
-  var SECTIONS = [['soup', 'Soup'], ['mains', 'Mains'], ['veg', 'Vegetarian & vegan'], ['sides', 'Sides & extras']];
+  var SECTIONS = [['soup', 'Soup'], ['mains', 'Mains'], ['veg', 'Vegetarian & vegan']];
+  var WITH_SIDES = { mains: 1, veg: 1 };
   var AL = { celery: 'Celery', gluten: 'Gluten', crustaceans: 'Crustaceans', eggs: 'Eggs', fish: 'Fish', lupin: 'Lupin', milk: 'Milk', molluscs: 'Molluscs', mustard: 'Mustard', nuts: 'Nuts', peanuts: 'Peanuts', sesame: 'Sesame', soya: 'Soya', sulphites: 'Sulphites' };
   var LS_KEY = 'kitchenmaster.menus.v1';
   var STEP = 5;
@@ -30,7 +31,7 @@
   function fmt(s, o) { return parse(s).toLocaleDateString('en-GB', o); }
 
   /* ---------- data shape ---------- */
-  function blankMeal() { return { guests: null, soup: [], mains: [], veg: [], sides: [] }; }
+  function blankMeal() { return { guests: null, soup: [], mains: [], veg: [] }; }
   function blankDay() { return { lunch: blankMeal(), dinner: blankMeal() }; }
   function blankWeek(s) { var d = []; for (var i = 0; i < 7; i++) d.push(blankDay()); return { weekStart: s, days: d }; }
   function normWeek(w, id) {
@@ -39,7 +40,13 @@
       MEALS.forEach(function (m) {
         var src = (day && day[m[0]]) || {}, dst = out.days[i][m[0]];
         dst.guests = src.guests == null ? null : src.guests;
-        SECTIONS.forEach(function (s) { dst[s[0]] = Array.isArray(src[s[0]]) ? src[s[0]] : []; });
+        SECTIONS.forEach(function (s) {
+          dst[s[0]] = (Array.isArray(src[s[0]]) ? src[s[0]] : []).map(function (it) {
+            var o = { id: it.id || uid(), recipeId: it.recipeId || null, name: it.name || '' };
+            if (WITH_SIDES[s[0]]) o.sides = (Array.isArray(it.sides) ? it.sides : []).map(function (x) { return { id: x.id || uid(), recipeId: x.recipeId || null, name: x.name || '' }; });
+            return o;
+          });
+        });
       });
     });
     return out;
@@ -114,18 +121,24 @@
     if (m) out.push('<span class="ch may" title="May contain">+' + m + ' may</span>');
     return out.join('');
   }
-  function pct(cook, guests) { return (cook && guests) ? Math.round(cook / guests * 100) + '% of guests' : ''; }
-  function itemHTML(it, meal, sec, guests) {
+  function tagsHTML(it, r) { return '<span class="pi-tags" data-tags="' + esc(it.recipeId || '') + '">' + (it.recipeId ? chipsFor(r) : '<span class="ch">Custom</span>') + '</span>'; }
+  function sideHTML(sd, meal, sec, parent) {
+    var r = sd.recipeId ? P.byId[sd.recipeId] : null, name = r ? r.name : sd.name;
+    return '<li class="side" data-id="' + esc(sd.id) + '"><div class="pi-main"><span class="pi-name">' + esc(name) + '</span>' + tagsHTML(sd, r) + '</div>' +
+      '<button class="icon-btn rmi" type="button" data-pact="rm-side" data-meal="' + meal + '" data-sec="' + sec + '" data-id="' + esc(parent) + '" data-sid="' + esc(sd.id) + '" aria-label="Remove side ' + esc(name) + '">×</button></li>';
+  }
+  function sidesHTML(it, meal, sec) {
+    var list = it.sides || [], open = P.picker && P.picker.meal === meal && P.picker.sec === sec && P.picker.parent === it.id;
+    return '<div class="sides"><span class="lbl">Sides</span>' +
+      (list.length ? '<ul class="pitems">' + list.map(function (sd) { return sideHTML(sd, meal, sec, it.id); }).join('') + '</ul>' : '<p class="dim sides-none">No sides added</p>') +
+      (open ? pickerHTML() : '<button class="btn add sm" type="button" data-pact="p-open" data-meal="' + meal + '" data-sec="' + sec + '" data-parent="' + esc(it.id) + '">+ Add side</button>') + '</div>';
+  }
+  function itemHTML(it, meal, sec) {
     var r = it.recipeId ? P.byId[it.recipeId] : null;
     var name = r ? r.name : it.name;
-    return '<li class="pi" data-id="' + esc(it.id) + '"><div class="pi-main"><span class="pi-name">' + esc(name) + '</span>' +
-      '<span class="pi-tags" data-tags="' + esc(it.recipeId || '') + '">' + (it.recipeId ? chipsFor(r) : '<span class="ch">Custom</span>') + '</span></div>' +
-      '<div class="cook"><span class="lbl">Cook</span><div class="stepper">' +
-      '<button class="icon-btn" type="button" data-pact="c-dec" data-meal="' + meal + '" data-sec="' + sec + '" data-id="' + esc(it.id) + '" aria-label="Fewer ' + esc(name) + '">−</button>' +
-      '<input class="cin" inputmode="numeric" value="' + (it.cook == null ? '' : it.cook) + '" placeholder="0" data-meal="' + meal + '" data-sec="' + sec + '" data-id="' + esc(it.id) + '" aria-label="Portions of ' + esc(name) + '">' +
-      '<button class="icon-btn" type="button" data-pact="c-inc" data-meal="' + meal + '" data-sec="' + sec + '" data-id="' + esc(it.id) + '" aria-label="More ' + esc(name) + '">+</button></div>' +
-      '<span class="pct" data-pct="' + esc(it.id) + '">' + pct(it.cook, guests) + '</span></div>' +
-      '<button class="icon-btn rmi" type="button" data-pact="rm" data-meal="' + meal + '" data-sec="' + sec + '" data-id="' + esc(it.id) + '" aria-label="Remove ' + esc(name) + '">×</button></li>';
+    return '<li class="pi" data-id="' + esc(it.id) + '"><div class="pi-row"><div class="pi-main"><span class="pi-name">' + esc(name) + '</span>' + tagsHTML(it, r) + '</div>' +
+      '<button class="icon-btn rmi" type="button" data-pact="rm" data-meal="' + meal + '" data-sec="' + sec + '" data-id="' + esc(it.id) + '" aria-label="Remove ' + esc(name) + '">×</button></div>' +
+      (WITH_SIDES[sec] ? sidesHTML(it, meal, sec) : '') + '</li>';
   }
   function pickerHTML() {
     return '<div class="picker"><label class="fld"><span>Search The Source</span><input id="pq" type="search" autocomplete="off" placeholder="Dish or ingredient" value="' + esc(P.q) + '"></label>' +
@@ -133,22 +146,10 @@
   }
   function sectionHTML(meal, sec, label, m) {
     var items = m[sec];
-    var open = P.picker && P.picker.meal === meal && P.picker.sec === sec;
+    var open = P.picker && P.picker.meal === meal && P.picker.sec === sec && !P.picker.parent;
     return '<div class="psec"><div class="psec-head"><h4>' + label + '</h4>' + (items.length ? '<span class="lbl">' + items.length + (items.length === 1 ? ' dish' : ' dishes') + '</span>' : '') + '</div>' +
-      (items.length ? '<ul class="pitems">' + items.map(function (it) { return itemHTML(it, meal, sec, m.guests); }).join('') + '</ul>' : '<p class="dim none">Nothing added</p>') +
+      (items.length ? '<ul class="pitems">' + items.map(function (it) { return itemHTML(it, meal, sec); }).join('') + '</ul>' : '<p class="dim none">Nothing added</p>') +
       (open ? pickerHTML() : '<button class="btn add" type="button" data-pact="p-open" data-meal="' + meal + '" data-sec="' + sec + '">+ Add dish</button>') + '</div>';
-  }
-  function footText(m) {
-    var main = 0, soup = 0;
-    m.mains.concat(m.veg, m.sides).forEach(function (i) { main += i.cook || 0; });
-    m.soup.forEach(function (i) { soup += i.cook || 0; });
-    var parts = [];
-    if (soup) parts.push('Soup ' + soup);
-    if (main) parts.push('Mains, veg and sides ' + main);
-    if (!parts.length) return 'Set how many of each dish to cook.';
-    var t = parts.join(' · ') + ' portions';
-    if (m.guests && main) t += ' · ' + Math.round(main / m.guests * 100) + '% of guests';
-    return t;
   }
   function mealHTML(meal, label, d) {
     var m = d[meal];
@@ -157,8 +158,7 @@
       '<button class="icon-btn" type="button" data-pact="g-dec" data-meal="' + meal + '" aria-label="Fewer ' + label + ' guests">−</button>' +
       '<input class="gin" inputmode="numeric" value="' + (m.guests == null ? '' : m.guests) + '" placeholder="0" data-meal="' + meal + '" aria-label="' + label + ' guests">' +
       '<button class="icon-btn" type="button" data-pact="g-inc" data-meal="' + meal + '" aria-label="More ' + label + ' guests">+</button></div></div></div>' +
-      SECTIONS.map(function (s) { return sectionHTML(meal, s[0], s[1], m); }).join('') +
-      '<p class="meal-foot" data-foot="' + meal + '">' + esc(footText(m)) + '</p></section>';
+      SECTIONS.map(function (s) { return sectionHTML(meal, s[0], s[1], m); }).join('') + '</section>';
   }
   function render() {
     if (!P.loaded) { root.innerHTML = '<div class="empty"><h2>Loading menus</h2><p>Fetching the planner.</p></div>'; return; }
@@ -198,16 +198,18 @@
   function updateTags() {
     root.querySelectorAll('[data-tags]').forEach(function (e) { var id = e.dataset.tags; if (id) e.innerHTML = chipsFor(P.byId[id]); });
   }
-  function updateDerived() {
-    var w = getW(P.week), d = w.days[P.day];
-    MEALS.forEach(function (m) {
-      var meal = d[m[0]], f = $('[data-foot="' + m[0] + '"]'); if (f) f.textContent = footText(meal);
-      SECTIONS.forEach(function (s) { meal[s[0]].forEach(function (it) { var p = $('[data-pct="' + it.id + '"]'); if (p) p.textContent = pct(it.cook, meal.guests); }); });
-    });
-  }
+  function updateDerived() { /* guests no longer drive any derived text */ }
   function findItem(meal, sec, id) {
     var w = P.menus[P.week]; if (!w) return null;
     return w.days[P.day][meal][sec].filter(function (i) { return i.id === id; })[0] || null;
+  }
+
+  function addPicked(pk, rid, name) {
+    edit(function (w) {
+      var list = w.days[P.day][pk.meal][pk.sec];
+      if (pk.parent) { var par = list.filter(function (i) { return i.id === pk.parent; })[0]; if (par) (par.sides = par.sides || []).push({ id: uid(), recipeId: rid, name: name }); }
+      else { var o = { id: uid(), recipeId: rid, name: name }; if (WITH_SIDES[pk.sec]) o.sides = []; list.push(o); }
+    });
   }
 
   /* ---------- events ---------- */
@@ -216,8 +218,6 @@
     if (t.id === 'pq') { P.q = t.value; renderPickerList(); return; }
     if (t.classList.contains('gin')) {
       var g = num(t.value); edit(function (w) { w.days[P.day][t.dataset.meal].guests = g; }); updateDerived();
-    } else if (t.classList.contains('cin')) {
-      var c = num(t.value); edit(function (w) { var it = findItem(t.dataset.meal, t.dataset.sec, t.dataset.id); if (it) it.cook = c; }); updateDerived();
     }
   });
   root.addEventListener('click', function (e) {
@@ -232,25 +232,25 @@
       case 'copy-prev':
         edit(function (w) {
           var p = clone(P.menus[addDays(P.week, -7)]);
-          p.days.forEach(function (day, i) { MEALS.forEach(function (m) { var src = day[m[0]], dst = w.days[i][m[0]]; dst.guests = null; SECTIONS.forEach(function (s) { dst[s[0]] = src[s[0]].map(function (it) { return { id: uid(), recipeId: it.recipeId || null, name: it.name, cook: null }; }); }); }); });
+          p.days.forEach(function (day, i) { MEALS.forEach(function (m) { var src = day[m[0]], dst = w.days[i][m[0]]; dst.guests = null; SECTIONS.forEach(function (s) { dst[s[0]] = src[s[0]].map(function (it) { var o = { id: uid(), recipeId: it.recipeId || null, name: it.name }; if (WITH_SIDES[s[0]]) o.sides = (it.sides || []).map(function (x) { return { id: uid(), recipeId: x.recipeId || null, name: x.name }; }); return o; }); }); }); });
         }); render(); break;
       case 'g-inc': case 'g-dec':
         edit(function (w) { var m = w.days[P.day][meal]; m.guests = Math.max(0, (m.guests || 0) + (a === 'g-inc' ? STEP : -STEP)); }); render(); break;
-      case 'c-inc': case 'c-dec':
-        edit(function (w) { var it = findItem(meal, sec, id); if (it) it.cook = Math.max(0, (it.cook || 0) + (a === 'c-inc' ? STEP : -STEP)); }); render(); break;
       case 'rm':
         edit(function (w) { var l = w.days[P.day][meal][sec]; w.days[P.day][meal][sec] = l.filter(function (i) { return i.id !== id; }); }); render(); break;
-      case 'p-open': P.picker = { meal: meal, sec: sec }; P.q = ''; render(); var q = $('#pq'); if (q) q.focus(); break;
+      case 'rm-side':
+        edit(function (w) { var it = findItem(meal, sec, id); if (it) it.sides = (it.sides || []).filter(function (x) { return x.id !== t.dataset.sid; }); }); render(); break;
+      case 'p-open': P.picker = { meal: meal, sec: sec, parent: t.dataset.parent || null }; P.q = ''; render(); var q = $('#pq'); if (q) q.focus(); break;
       case 'p-close': P.picker = null; render(); break;
       case 'pick':
         var r = P.byId[t.dataset.rid]; if (!r || !P.picker) break;
         var pk = P.picker;
-        edit(function (w) { w.days[P.day][pk.meal][pk.sec].push({ id: uid(), recipeId: r.id, name: r.name, cook: null }); });
+        addPicked(pk, r.id, r.name);
         P.picker = null; render(); break;
       case 'p-custom':
         var nm = P.q.trim(); if (!nm || !P.picker) break;
         var pc = P.picker;
-        edit(function (w) { w.days[P.day][pc.meal][pc.sec].push({ id: uid(), recipeId: null, name: nm, cook: null }); });
+        addPicked(pc, null, nm);
         P.picker = null; render(); break;
     }
   });
