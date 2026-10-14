@@ -10,7 +10,7 @@ Built for a real hotel and conference-centre kitchen that runs set menus, to rep
 | --- | --- | --- |
 | **The Source** | Live | Recipe book laid out like the printed work sheet. Scales to any number of portions, lists Brakes codes, tracks 14 allergens |
 | **Menu Planner** | Live | Pick each day's lunch and dinner from The Source, set guest numbers and how many of each dish to cook, with allergen tags on every dish |
-| Allergen Check | Planned | Cross-reference each group's allergies against the menu and flag concerns |
+| Allergen Check | Live | Cross-reference each group's allergies against the menu and flag concerns |
 | Stock Take | Planned | Manual counts against expected amounts |
 | Waste & Produced | Planned | Log waste and production so stock stays accurate |
 | Brakes Order | Planned | Total ingredients by Brakes code, minus stock, approve and copy into the portal |

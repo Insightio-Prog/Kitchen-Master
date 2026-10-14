@@ -16,6 +16,10 @@
 
   var P = { menus: {}, loaded: false, store: 'loading', week: mondayOf(new Date()), day: 0, picker: null, q: '', recipes: [], byId: {} };
   var ref = null, dirty = {}, timers = {}, seeded = false;
+  /* Share the menus with other modules (Allergen Check reads them through window.KM.menus / KM.onMenus). */
+  var msubs = [];
+  if (window.KM) { window.KM.menus = {}; window.KM.onMenus = function (f) { msubs.push(f); f(window.KM.menus); }; }
+  function pubMenus() { if (!window.KM) return; window.KM.menus = P.menus; msubs.forEach(function (f) { f(P.menus); }); }
   P.day = Math.min(6, Math.max(0, (new Date().getDay() + 6) % 7));
 
   /* ---------- helpers ---------- */
@@ -56,7 +60,7 @@
   function dayCount(d) { var n = 0; MEALS.forEach(function (m) { SECTIONS.forEach(function (s) { n += d[m[0]][s[0]].length; }); }); return n; }
   function edit(fn) {
     var s = P.week, w = P.menus[s] || (P.menus[s] = blankWeek(s));
-    fn(w); queueSave(s);
+    fn(w); queueSave(s); pubMenus();
   }
 
   /* ---------- storage ---------- */
@@ -162,6 +166,7 @@
   }
   function render() {
     if (!P.loaded) { root.innerHTML = '<div class="empty"><h2>Loading menus</h2><p>Fetching the planner.</p></div>'; return; }
+    pubMenus();
     var w = getW(P.week), d = w.days[P.day], today = iso(new Date());
     var empty = countItems(w) === 0, prev = P.menus[addDays(P.week, -7)];
     var tabs = DAYS.map(function (n, i) {

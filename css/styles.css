@@ -288,3 +288,51 @@ fieldset.alr legend { float: left; padding: 0; font-weight: 500; line-height: 44
   .meals { grid-template-columns: 1fr 1fr; }
   .gin { border: 0; }
 }
+
+/* Allergen Check */
+.gtabs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+.gtab { min-height: 44px; padding: 0 14px; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; font-weight: 600; cursor: pointer; }
+.gtab small { color: var(--muted); font-weight: 500; margin-left: 4px; }
+.gtab[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.gtab[aria-selected="true"] small { color: var(--bg); opacity: .8; }
+.subtabs { display: flex; gap: 8px; margin-bottom: 12px; }
+.stab { min-width: 150px; }
+.asum { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
+.acards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.acard .nt { margin: -6px 0 0; font-size: .9rem; }
+.alert { padding: 10px 12px; border: 1px solid; font-size: .95rem; line-height: 1.35; }
+.alert-bad { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.alert-warn { background: var(--warn-soft); border-color: var(--warn); color: var(--warn); }
+.alert-ok { color: var(--ok); border-color: var(--ok); }
+.ar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: start; padding: 10px 12px; border: 1px solid var(--line); border-left-width: 6px; background: var(--surface2); border-radius: 4px; list-style: none; }
+.ar-ok { border-left-color: var(--ok); }
+.ar-warn { border-left-color: var(--warn); }
+.ar-bad { border-left-color: var(--danger); }
+.ar-side { margin-left: 22px; padding: 6px 10px; background: var(--surface); }
+.ar-side .pi-name { font-size: 1rem; }
+.ar-main { display: grid; gap: 6px; min-width: 0; }
+.sv { font: 600 .78rem/1 var(--font-mono); padding: 6px 9px; border-radius: 99px; border: 1px solid; white-space: nowrap; }
+.sv-ok { color: var(--ok); border-color: var(--ok); }
+.sv-warn { color: var(--warn); border-color: var(--warn); background: var(--warn-soft); }
+.sv-bad { color: var(--contains-fg); background: var(--contains-bg); border-color: var(--contains-bg); }
+.aedit { display: grid; gap: 14px; max-width: 980px; background: var(--surface); border: 1px solid var(--line); padding: 16px clamp(12px, 2vw, 20px) 20px; }
+.agrid { display: grid; grid-template-columns: minmax(0, 1fr) 140px; gap: 12px; }
+.ah { font: 700 1.2rem/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.tt-wrap { overflow-x: auto; }
+.tt { border-collapse: collapse; width: 100%; min-width: 640px; }
+.tt th { text-align: left; font: 600 1.05rem/1 var(--font-display); padding: 4px 10px 4px 0; white-space: nowrap; }
+.tt th small { color: var(--muted); font: 500 .8rem var(--font-body); }
+.tt td { padding: 4px 8px 4px 0; }
+.tt td:nth-child(4) { width: 130px; }
+.chk { display: flex; gap: 8px; align-items: center; min-height: 44px; font-weight: 500; cursor: pointer; }
+.chk input { width: 22px; min-height: 22px; height: 22px; }
+.reqs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.req { border: 1px solid var(--line); background: var(--surface2); padding: 10px 12px; display: grid; gap: 10px; }
+.req-grid { display: grid; grid-template-columns: 150px minmax(0, 1fr) 90px minmax(0, 1.2fr) auto 44px; gap: 10px; align-items: end; }
+.req-grid2 { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr) minmax(0, 1fr); gap: 10px; }
+.addrow { display: flex; gap: 8px; flex-wrap: wrap; }
+@media (max-width: 1099px) { .acards { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 760px) { .req-grid, .req-grid2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .agrid { grid-template-columns: minmax(0, 1fr); } }
+@media print { .gtabs, .subtabs, .addrow { display: none !important; } .acards { grid-template-columns: 1fr 1fr; } .acard { break-inside: avoid; } }
+.cover { display: flex; gap: 6px; flex-wrap: wrap; }
+.asum { margin-top: 8px; }

@@ -18,7 +18,7 @@
   <nav class="nav" role="tablist" aria-label="Kitchen Master modules" id="nav">
     <button class="tab" role="tab" type="button" data-mod="source" aria-selected="true">The Source</button>
     <button class="tab" role="tab" type="button" data-mod="planner" aria-selected="false">Menu Planner</button>
-    <button class="tab" role="tab" type="button" data-mod="allergens" aria-selected="false">Allergen Check <span class="soon">soon</span></button>
+    <button class="tab" role="tab" type="button" data-mod="allergens" aria-selected="false">Allergen Check</button>
     <button class="tab" role="tab" type="button" data-mod="stock" aria-selected="false">Stock Take <span class="soon">soon</span></button>
     <button class="tab" role="tab" type="button" data-mod="waste" aria-selected="false">Waste &amp; Produced <span class="soon">soon</span></button>
     <button class="tab" role="tab" type="button" data-mod="order" aria-selected="false">Brakes Order <span class="soon">soon</span></button>
@@ -27,10 +27,9 @@
   <section id="mod-planner" class="mod" hidden aria-label="Menu Planner">
   <div class="modhead"><h2>Menu Planner</h2><span>Set the week, guest numbers and what to cook</span></div>
   <div id="planner-root"></div></section>
-  <section id="mod-allergens" class="mod" hidden aria-label="Allergen Check"><div class="soonbox"><h2>Allergen Check</h2>
-    <p>Enter each group’s allergy information and Kitchen Master checks it against the week’s menu.</p>
-    <ul><li>Flags every dish that contains or may contain a group’s allergens</li><li>Warns about recipes whose allergens are still unconfirmed</li><li>Suggests the safe alternative for each meal</li></ul>
-    <div class="feeds">Reads: The Source, Menu Planner.</div></div></section>
+  <section id="mod-allergens" class="mod" hidden aria-label="Allergen Check">
+  <div class="modhead"><h2>Allergen Check</h2><span>Check each group's needs against the week's menu</span></div>
+  <div id="allergen-root"></div></section>
   <section id="mod-stock" class="mod" hidden aria-label="Stock Take"><div class="soonbox"><h2>Stock Take</h2>
     <p>Count what is on the shelves and compare it against what Kitchen Master expects you to have.</p>
     <ul><li>Manual count entry that works on a tablet</li><li>Expected amount from deliveries, usage, waste and production</li><li>Highlights differences so you can spot losses</li></ul>
@@ -63,6 +62,7 @@
 <script src="js/data/menu.seed.js"></script>
 <script src="js/modules/source.js"></script>
 <script src="js/modules/planner.js"></script>
+<script src="js/modules/allergens.js"></script>
 <script src="js/nav.js"></script>
 </body>
 </html>
